@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:task_todo_app/presentation/tab/cubit/content_switcher_cubit.dart';
 import 'package:task_todo_app/presentation/tab/tab_screen.dart';
 
 void main() {
@@ -10,10 +12,13 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Task Todo App',
-      home: TabScreen(),
+    return BlocProvider(
+      create: (context) => ContentSwitcherCubit(),
+      child: const MaterialApp(
+        debugShowCheckedModeBanner: false,
+        title: 'Task Todo App',
+        home: TabScreen(),
+      ),
     );
   }
 }
