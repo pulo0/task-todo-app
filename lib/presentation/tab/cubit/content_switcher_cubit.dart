@@ -1,44 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:task_todo_app/presentation/home/home_screen.dart';
 import 'package:task_todo_app/presentation/tab/cubit/content_switcher_state.dart';
 
 class ContentSwitcherCubit extends Cubit<ContentSwitcherState> {
   ContentSwitcherCubit()
       : super(
           ContentSwitcherState(
-            pageName: 'Home',
-            index: 0,
-            activeContent: const Center(
-              child: Text('Home'),
-            ),
-          ),
+              pageName: 'Home', index: 0, activeContent: const HomeScreen()),
         );
 
   void setPage(int index) {
     final List<ContentSwitcherState> contentList = [
       ContentSwitcherState(
-          pageName: 'Home',
-          index: index,
-          activeContent: const Column(
-            children: [
-              SizedBox(height: 16),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  SizedBox(
-                    width: 300,
-                    height: 200,
-                    child: Card(
-                      color: Colors.greenAccent,
-                      child: Center(
-                        child: Text('Home page'),
-                      ),
-                    ),
-                  )
-                ],
-              ),
-            ],
-          )),
+          pageName: 'Home', index: index, activeContent: const HomeScreen()),
       ContentSwitcherState(
           pageName: 'Search',
           index: index,
