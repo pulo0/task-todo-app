@@ -18,22 +18,15 @@ class _TabScreenState extends State<TabScreen> {
     return BlocBuilder<ContentSwitcherCubit, ContentSwitcherState>(
       builder: (context, state) => Scaffold(
         appBar: AppBar(
-            automaticallyImplyLeading: false,
-            leading: AppBarIconsButtons(
-              optionIcon: const Icon(Icons.menu_outlined),
-              onButtonPress: () {},
-              paddingOptionToLeft: 16,
-            ),
-            leadingWidth: 66,
-            title: Text(state.pageName),
-            centerTitle: true,
-            actions: [
-              AppBarIconsButtons(
-                optionIcon: const Icon(Icons.notifications),
-                onButtonPress: () {},
-                paddingOptionToRight: 16,
-              )
-            ]),
+          title: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: <Widget>[
+              AppBarIconsButtons(optionIcon: const Icon(Icons.menu_outlined), onButtonPress: () {},),
+              Text(state.pageName),
+              AppBarIconsButtons(optionIcon: const Icon(Icons.notifications), onButtonPress: () {},),
+            ],
+          ),
+        ),
         extendBody: true,
         resizeToAvoidBottomInset: false,
         floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
