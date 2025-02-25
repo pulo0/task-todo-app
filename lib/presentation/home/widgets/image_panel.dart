@@ -11,7 +11,7 @@ class ImagePanel extends StatelessWidget {
       children: [
         SizedBox(
           width: 325,
-          height: 200,
+          height: 175,
           child: ShaderMask(
             shaderCallback: (rect) {
               return const LinearGradient(
@@ -23,16 +23,22 @@ class ImagePanel extends StatelessWidget {
               );
             },
             blendMode: BlendMode.dstIn,
-            child: Card(
-              color: Colors.transparent,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(10.0),
-              ),
-              clipBehavior: Clip.antiAliasWithSaveLayer,
-              child: Image.asset(
-                Assets.images.cardSunrise.keyName,
-                fit: BoxFit.fill,
-              ),
+            child: Stack(
+              alignment: Alignment.center,
+              fit: StackFit.expand,
+              children: <Widget>[
+                Card(
+                  color: Colors.transparent,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10.0),
+                  ),
+                  clipBehavior: Clip.antiAliasWithSaveLayer,
+                  child: Image.asset(
+                    Assets.images.cardSunrise.keyName,
+                    fit: BoxFit.cover,
+                  ),
+                ),
+              ],
             ),
           ),
         ),
