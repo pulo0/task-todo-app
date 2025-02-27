@@ -16,25 +16,22 @@ class AppBarIconsButtons extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-        padding: paddingOptionToLeft != null
-            ? EdgeInsets.only(left: paddingOptionToLeft!)
-            : EdgeInsets.only(
-                right: paddingOptionToRight!,
-              ),
-        child: Container(
-          decoration: BoxDecoration(
-            color: Colors.grey.shade300,
-            shape: BoxShape.rectangle,
-            border: Border.all(color: Colors.grey.shade300),
-            borderRadius: const BorderRadius.all(
-              Radius.circular(10),
-            ),
+    return InkWell(
+      onTap: onButtonPress,
+      borderRadius: const BorderRadius.all(Radius.circular(10)),
+      splashColor: Colors.black12,
+      child: Ink(
+        height: 50,
+        width: 50,
+        decoration: BoxDecoration(
+          shape: BoxShape.rectangle,
+          border: Border.all(color: Colors.grey.shade300),
+          borderRadius: const BorderRadius.all(
+            Radius.circular(10),
           ),
-          child: IconButton(
-            icon: optionIcon,
-            onPressed: onButtonPress,
-          ),
-        ));
+        ),
+        child: optionIcon,
+      ),
+    );
   }
 }
