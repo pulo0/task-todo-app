@@ -18,12 +18,20 @@ class _TabScreenState extends State<TabScreen> {
     return BlocBuilder<ContentSwitcherCubit, ContentSwitcherState>(
       builder: (context, state) => Scaffold(
         appBar: AppBar(
+          backgroundColor: Colors.transparent,
+          elevation: 0,
           title: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
-              AppBarIconsButtons(optionIcon: const Icon(Icons.menu_outlined), onButtonPress: () {},),
+              AppBarIconsButtons(
+                optionIcon: const Icon(Icons.menu_outlined),
+                onButtonPress: () {},
+              ),
               Text(state.pageName),
-              AppBarIconsButtons(optionIcon: const Icon(Icons.notifications), onButtonPress: () {},),
+              AppBarIconsButtons(
+                optionIcon: const Icon(Icons.notifications),
+                onButtonPress: () {},
+              ),
             ],
           ),
         ),

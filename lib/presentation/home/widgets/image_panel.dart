@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:task_todo_app/gen/assets.gen.dart';
 import 'package:flutter/material.dart';
 
@@ -10,8 +12,8 @@ class ImagePanel extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         SizedBox(
-          width: 325,
-          height: 175,
+          width: 360,
+          height: 160,
           child: ShaderMask(
             shaderCallback: (rect) {
               return const LinearGradient(
@@ -30,12 +32,19 @@ class ImagePanel extends StatelessWidget {
                 Card(
                   color: Colors.transparent,
                   shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10.0),
+                    borderRadius: BorderRadius.circular(40.0),
                   ),
                   clipBehavior: Clip.antiAliasWithSaveLayer,
-                  child: Image.asset(
-                    Assets.images.cardSunrise.keyName,
-                    fit: BoxFit.cover,
+                  child: ImageFiltered(
+                    imageFilter: ImageFilter.blur(
+                      sigmaX: 1.0,
+                      sigmaY: 1.0,
+                      tileMode: TileMode.decal,
+                    ),
+                    child: Image.asset(
+                      Assets.images.cardSunrise.keyName,
+                      fit: BoxFit.cover,
+                    ),
                   ),
                 ),
               ],
