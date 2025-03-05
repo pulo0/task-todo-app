@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:task_todo_app/styles/app_dimensions.dart';
+import 'package:task_todo_app/styles/app_padding.dart';
 
 class ListTileCard extends StatelessWidget {
   final List<String> items;
@@ -11,20 +13,23 @@ class ListTileCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 10),
+      padding: AppPadding.smallVertical,
       child: Row(
         children: <Widget>[
-          IconButton(
-            onPressed: () {},
-            icon: const Icon(Icons.add_circle),
+          CircleAvatar(
+            child: IconButton(
+              onPressed: () {},
+              icon: const Icon(Icons.check_circle_outline),
+            ),
           ),
+          const SizedBox(width: AppDimensions.m),
           Expanded(
             child: Card(
               elevation: 1,
               shadowColor: Colors.white,
               shape: const RoundedRectangleBorder(
                 borderRadius: BorderRadius.all(
-                  Radius.circular(30),
+                  Radius.circular(AppDimensions.smallBorderCurve),
                 ),
               ),
               child: Padding(
@@ -36,12 +41,15 @@ class ListTileCard extends StatelessWidget {
                       backgroundColor: Colors.blue,
                       child: Icon(Icons.laptop_chromebook_outlined),
                     ),
-                    const SizedBox(width: 10),
+                    const SizedBox(width: AppDimensions.s),
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
                         Text('Item ${items[currentIndex]}'),
-                        Text('Item ${items[currentIndex]} description', style: const TextStyle(fontSize: 10),),
+                        Text(
+                          'Item ${items[currentIndex]} description',
+                          style: const TextStyle(fontSize: 10),
+                        ),
                       ],
                     ),
                     const Spacer(),

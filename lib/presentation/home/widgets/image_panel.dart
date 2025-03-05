@@ -1,7 +1,7 @@
 import 'dart:ui';
-
-import 'package:task_todo_app/gen/assets.gen.dart';
 import 'package:flutter/material.dart';
+import 'package:task_todo_app/gen/assets.gen.dart';
+import 'package:task_todo_app/styles/app_dimensions.dart';
 
 class ImagePanel extends StatelessWidget {
   const ImagePanel({super.key});
@@ -32,7 +32,9 @@ class ImagePanel extends StatelessWidget {
                 Card(
                   color: Colors.transparent,
                   shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(40.0),
+                    borderRadius: BorderRadius.circular(
+                      AppDimensions.mediumBorderCurve,
+                    ),
                   ),
                   clipBehavior: Clip.antiAliasWithSaveLayer,
                   child: ImageFiltered(

@@ -1,16 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:task_todo_app/styles/app_dimensions.dart';
 
 class AppBarIconsButtons extends StatelessWidget {
   final Icon optionIcon;
   final void Function()? onButtonPress;
-  final double? paddingOptionToLeft;
-  final double? paddingOptionToRight;
 
   const AppBarIconsButtons({
     required this.optionIcon,
     this.onButtonPress,
-    this.paddingOptionToLeft,
-    this.paddingOptionToRight,
     super.key,
   });
 
@@ -27,7 +24,7 @@ class AppBarIconsButtons extends StatelessWidget {
           shape: BoxShape.rectangle,
           border: Border.all(color: Colors.grey.shade300),
           borderRadius: const BorderRadius.all(
-            Radius.circular(10),
+            Radius.circular(AppDimensions.miniBorderCurve),
           ),
         ),
         child: optionIcon,
