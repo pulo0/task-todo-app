@@ -17,13 +17,12 @@ class BottomDrawer extends StatelessWidget {
               maxHeight: double.infinity,
             ),
             decoration: BoxDecoration(
-                color: Colors.black38,
                 borderRadius: const BorderRadius.vertical(
                   top: Radius.circular(AppDimensions.mediumBorderCurve),
                 ),
                 boxShadow: <BoxShadow>[
                   BoxShadow(
-                      color: Colors.white10.withValues(alpha: .1),
+                      color: Colors.black45.withValues(alpha: .1),
                       blurRadius: 15,
                       offset: const Offset(0, -1),
                       blurStyle: BlurStyle.outer),

@@ -25,20 +25,17 @@ class ListTileCard extends StatelessWidget {
           const SizedBox(width: AppDimensions.m),
           Expanded(
             child: Card(
-              elevation: 1,
-              shadowColor: Colors.white,
               shape: const RoundedRectangleBorder(
                 borderRadius: BorderRadius.all(
                   Radius.circular(AppDimensions.smallBorderCurve),
                 ),
               ),
               child: Padding(
-                padding: const EdgeInsets.all(16.0),
+                padding: const EdgeInsets.all(AppDimensions.m),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: <Widget>[
                     const CircleAvatar(
-                      backgroundColor: Colors.blue,
                       child: Icon(Icons.laptop_chromebook_outlined),
                     ),
                     const SizedBox(width: AppDimensions.s),

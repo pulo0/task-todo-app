@@ -15,15 +15,15 @@ class AppBarIconsButtons extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: onButtonPress,
-      borderRadius: const BorderRadius.all(Radius.circular(10)),
-      splashColor: Colors.black12,
+      borderRadius: const BorderRadius.all(
+        Radius.circular(AppDimensions.miniBorderCurve),
+      ),
       child: Ink(
         height: 50,
         width: 50,
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           shape: BoxShape.rectangle,
-          border: Border.all(color: Colors.grey.shade300),
-          borderRadius: const BorderRadius.all(
+          borderRadius: BorderRadius.all(
             Radius.circular(AppDimensions.miniBorderCurve),
           ),
         ),
