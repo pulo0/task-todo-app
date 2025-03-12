@@ -11,7 +11,7 @@ class BottomDrawer extends StatelessWidget {
     return SliverToBoxAdapter(
       child: Stack(
         children: <Widget>[
-          const BottomDrawerSetting(),
+          const BottomDrawerSetting(3),
           Container(
             constraints: const BoxConstraints(
               maxHeight: double.infinity,
@@ -22,7 +22,7 @@ class BottomDrawer extends StatelessWidget {
                 ),
                 boxShadow: <BoxShadow>[
                   BoxShadow(
-                      color: Colors.black45.withValues(alpha: .1),
+                      color: Colors.black45.withOpacity(.1),
                       blurRadius: 15,
                       offset: const Offset(0, -1),
                       blurStyle: BlurStyle.outer),

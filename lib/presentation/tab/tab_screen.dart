@@ -45,13 +45,13 @@ class _TabScreenState extends State<TabScreen> {
       resizeToAvoidBottomInset: false,
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       floatingActionButton: FloatingActionButton(
-        foregroundColor: Colors.grey.shade800,
-        backgroundColor: Colors.grey.shade300,
         elevation: 4,
         onPressed: () {},
         shape: const CircleBorder(),
         child: const Icon(Icons.add),
       ),
+      // wip
+      drawer: const Drawer(),
       bottomNavigationBar: CustomNavigationBar(
         _currentPageIndex,
         setPage,

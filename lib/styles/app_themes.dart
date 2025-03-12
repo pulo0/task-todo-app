@@ -8,19 +8,26 @@ import 'package:task_todo_app/styles/app_dimensions.dart';
 //       brightness: Brightness.dark,
 //     );
 
+TextTheme get universalTextTheme =>
+    GoogleFonts.getTextTheme('Work Sans').copyWith(
+        titleLarge: const TextStyle(fontSize: 64, fontWeight: FontWeight.w700),
+        bodyMedium: const TextStyle(fontSize: 14, fontWeight: FontWeight.w700),
+        bodySmall: const TextStyle(
+            fontSize: 9.5,
+            fontWeight: FontWeight.normal,
+            color: Colors.black45));
+
 ThemeData lightAppTheme() => ThemeData(
-  brightness: Brightness.light,
-  useMaterial3: true,
-  visualDensity: VisualDensity.adaptivePlatformDensity,
-  fontFamily: 'Work Sans',
-  primaryColor: AppColors.primary100,
-  colorScheme: ThemeData().colorScheme.copyWith(
-    primary: AppColors.neutral100,
-    secondary: AppColors.primary100
-  ),
-  splashColor: AppColors.primary400,
-  highlightColor: AppColors.primary500.withValues(alpha: .5),
-);
+    brightness: Brightness.light,
+    useMaterial3: true,
+    visualDensity: VisualDensity.adaptivePlatformDensity,
+    fontFamily: 'Work Sans',
+    primaryColor: AppColors.primary100,
+    colorScheme: ThemeData().colorScheme.copyWith(
+        primary: AppColors.neutral100, secondary: AppColors.primary100),
+    splashColor: AppColors.primary400,
+    highlightColor: AppColors.primary500.withOpacity(.5),
+    textTheme: universalTextTheme);
 
 ThemeData mainTheme() => ThemeData(
       brightness: Brightness.dark,
@@ -39,5 +46,5 @@ ThemeData mainTheme() => ThemeData(
         ),
         clipBehavior: Clip.antiAliasWithSaveLayer,
       ),
-        fontFamily: 'Work Sans',
+      fontFamily: 'Work Sans',
     );

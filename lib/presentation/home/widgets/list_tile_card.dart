@@ -1,15 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:task_todo_app/styles/app_dimensions.dart';
 import 'package:task_todo_app/styles/app_padding.dart';
+import 'package:task_todo_app/styles/app_themes.dart';
 
-class ListTileCard extends StatelessWidget {
-  final List<String> items;
+class ListTileCard extends StatefulWidget {
+  final List<int> items;
   final int currentIndex;
 
-  const ListTileCard(Key? key,
-      {required this.items, required this.currentIndex})
-      : super(key: key);
+  const ListTileCard({
+    required this.items,
+    required this.currentIndex,
+    super.key,
+  });
 
+  @override
+  State<ListTileCard> createState() => _ListTileCardState();
+}
+
+class _ListTileCardState extends State<ListTileCard> {
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -18,7 +26,9 @@ class ListTileCard extends StatelessWidget {
         children: <Widget>[
           CircleAvatar(
             child: IconButton(
-              onPressed: () {},
+              onPressed: () {
+                setState(() => widget.items.removeAt(widget.currentIndex));
+              },
               icon: const Icon(Icons.check_circle_outline),
             ),
           ),
@@ -42,10 +52,23 @@ class ListTileCard extends StatelessWidget {
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
-                        Text('Item ${items[currentIndex]}'),
-                        Text(
-                          'Item ${items[currentIndex]} description',
-                          style: const TextStyle(fontSize: 10),
+                        SizedBox(
+                            width: 125,
+                            child: Text(
+                              'Item ${widget.items[widget.currentIndex]}',
+                              overflow: TextOverflow.fade,
+                              softWrap: false,
+                              maxLines: 1,
+                            )),
+                        SizedBox(
+                          width: 100,
+                          child: Text(
+                            'Item ${widget.items[widget.currentIndex]} description',
+                            style: universalTextTheme.bodySmall,
+                            overflow: TextOverflow.fade,
+                            maxLines: 1,
+                            softWrap: false,
+                          ),
                         ),
                       ],
                     ),

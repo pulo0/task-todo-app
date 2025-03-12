@@ -3,7 +3,9 @@ import 'package:task_todo_app/styles/app_padding.dart';
 import 'package:task_todo_app/styles/app_text_styles.dart';
 
 class BottomDrawerSetting extends StatelessWidget {
-  const BottomDrawerSetting({super.key});
+  final int taskAmount;
+
+  const BottomDrawerSetting(this.taskAmount, {super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -12,7 +14,7 @@ class BottomDrawerSetting extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: <Widget>[
-          const Text('Today\'s tasks', style: AppTextStyles.heading),
+          Text('Today ($taskAmount)', style: AppTextStyles.heading),
           TextButton(
             onPressed: () {},
             child: const Text('See All'),

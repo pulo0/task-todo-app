@@ -11,6 +11,7 @@ class MainAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SliverAppBar(
+      automaticallyImplyLeading: false,
       stretch: true,
       toolbarHeight: 100,
       flexibleSpace: FlexibleSpaceBar(
@@ -22,7 +23,9 @@ class MainAppBar extends StatelessWidget {
             children: <Widget>[
               AppBarIconsButtons(
                 optionIcon: const Icon(Icons.menu_outlined),
-                onButtonPress: () {},
+                onButtonPress: () {
+                  Scaffold.of(context).openDrawer();
+                },
               ),
               Text(pageName, style: AppTextStyles.heading),
               AppBarIconsButtons(
