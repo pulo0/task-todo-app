@@ -14,7 +14,7 @@ class MainApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: lightAppTheme(),
-      darkTheme: mainTheme(),
+      darkTheme: darkAppTheme(),
       themeMode: ThemeMode.system,
       title: 'Task Todo App',
       home: const TabScreen(),

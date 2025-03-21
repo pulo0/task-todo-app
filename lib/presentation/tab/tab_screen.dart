@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:task_todo_app/presentation/home/home_screen.dart';
+import 'package:task_todo_app/presentation/tab/widgets/drawer_list.dart';
 import 'package:task_todo_app/presentation/tab/widgets/custom_navigation_bar.dart';
 
 class TabScreen extends StatefulWidget {
@@ -51,7 +52,7 @@ class _TabScreenState extends State<TabScreen> {
         child: const Icon(Icons.add),
       ),
       // wip
-      drawer: const Drawer(),
+      drawer: const DrawerList(),
       bottomNavigationBar: CustomNavigationBar(
         _currentPageIndex,
         setPage,
