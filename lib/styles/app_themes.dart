@@ -12,6 +12,7 @@ TextTheme get universalTextTheme =>
     GoogleFonts.getTextTheme('Work Sans').copyWith(
         titleLarge: const TextStyle(fontSize: 64, fontWeight: FontWeight.w700),
         bodyMedium: const TextStyle(fontSize: 14, fontWeight: FontWeight.w700),
+        bodyLarge: const TextStyle(fontWeight: FontWeight.w700),
         bodySmall: const TextStyle(
           fontSize: 9.5,
           fontWeight: FontWeight.normal,
@@ -39,15 +40,11 @@ ThemeData darkAppTheme() => ThemeData(
         brightness: Brightness.dark,
       ),
       visualDensity: VisualDensity.adaptivePlatformDensity,
-      textTheme: GoogleFonts.getTextTheme('Work Sans').copyWith(
-        bodyMedium: const TextStyle(
-          color: Colors.white,
-          fontWeight: FontWeight.w700,
-        ),
-        bodySmall: const TextStyle(
-          color: Colors.white,
-        ),
-      ),
+      textTheme: universalTextTheme.copyWith(
+          bodyLarge: TextStyle(
+        fontWeight: FontWeight.w700,
+        color: AppColors.palette.neutral900,
+      )),
       cardTheme: CardTheme(
         color: Colors.transparent,
         shape: RoundedRectangleBorder(

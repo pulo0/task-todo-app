@@ -1,10 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:task_todo_app/presentation/home/home_screen.dart';
+import 'package:task_todo_app/presentation/tab/cubit/theme_switch_cubit.dart';
 import 'package:task_todo_app/presentation/tab/widgets/drawer_list.dart';
 import 'package:task_todo_app/presentation/tab/widgets/custom_navigation_bar.dart';
 
 class TabScreen extends StatefulWidget {
-  const TabScreen({super.key});
+  const TabScreen(
+      {required this.themeSwitchState,
+      required this.themeSwitchCubit,
+      super.key});
+
+  final ThemeSwitchState themeSwitchState;
+  final ThemeSwitchCubit themeSwitchCubit;
 
   @override
   State<TabScreen> createState() => _TabScreenState();
@@ -52,7 +59,10 @@ class _TabScreenState extends State<TabScreen> {
         child: const Icon(Icons.add),
       ),
       // wip
-      drawer: const DrawerList(),
+      drawer: DrawerList(
+        widget.themeSwitchCubit,
+        widget.themeSwitchState,
+      ),
       bottomNavigationBar: CustomNavigationBar(
         _currentPageIndex,
         setPage,
