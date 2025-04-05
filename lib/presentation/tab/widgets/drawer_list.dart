@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:task_todo_app/presentation/tab/cubit/theme_switch_cubit.dart';
 import 'package:task_todo_app/styles/app_dimensions.dart';
 import 'package:task_todo_app/styles/app_padding.dart';
-import 'package:task_todo_app/styles/app_themes.dart';
 
 class DrawerList extends StatefulWidget {
   const DrawerList(this.themeSwitchCubit, this.themeSwitchState, {super.key});

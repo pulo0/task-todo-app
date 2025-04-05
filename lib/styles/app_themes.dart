@@ -12,7 +12,11 @@ TextTheme get universalTextTheme =>
     GoogleFonts.getTextTheme('Work Sans').copyWith(
         titleLarge: const TextStyle(fontSize: 64, fontWeight: FontWeight.w700),
         bodyMedium: const TextStyle(fontSize: 14, fontWeight: FontWeight.w700),
-        bodyLarge: const TextStyle(fontWeight: FontWeight.w700),
+        bodyLarge: const TextStyle(
+          fontSize: 30,
+          fontWeight: FontWeight.w700,
+          letterSpacing: 5,
+        ),
         bodySmall: const TextStyle(
           fontSize: 9.5,
           fontWeight: FontWeight.normal,
@@ -29,7 +33,7 @@ ThemeData lightAppTheme() => ThemeData(
       dynamicSchemeVariant: DynamicSchemeVariant.vibrant,
     ),
     splashColor: AppColors.palette.primary400,
-    highlightColor: AppColors.palette.primary500.withOpacity(.5),
+    highlightColor: AppColors.palette.primary500.withValues(alpha: 0.5),
     textTheme: universalTextTheme);
 
 ThemeData darkAppTheme() => ThemeData(
@@ -41,10 +45,13 @@ ThemeData darkAppTheme() => ThemeData(
       ),
       visualDensity: VisualDensity.adaptivePlatformDensity,
       textTheme: universalTextTheme.copyWith(
-          bodyLarge: TextStyle(
-        fontWeight: FontWeight.w700,
-        color: AppColors.palette.neutral900,
-      )),
+        bodyLarge: TextStyle(
+          fontSize: 30,
+          fontWeight: FontWeight.w700,
+          letterSpacing: 5,
+          color: AppColors.palette.neutral900,
+        ),
+      ),
       cardTheme: CardTheme(
         color: Colors.transparent,
         shape: RoundedRectangleBorder(
